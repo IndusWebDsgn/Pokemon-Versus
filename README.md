@@ -1,5 +1,5 @@
 # Pokemon-Versus
-Pokémon Versus is an action-packed battle game where you step into the shoes of a Pokémon trainer. Choose from a roster of classic Pokémon, each with unique abilities, and face off against opponent in thrilling turn-based battles. Strategize your moves, use special abilities, and aim to outsmart your rival to win each round.
+Pokémon Versus is an battle game where you step into the shoes of a Pokémon trainer. Choose from a group of classic Pokémon, each with unique abilities, and face off against opponent in battles. Strategize your moves, use special abilities, and aim to outsmart your rival to win each round.
 
 ## How to Play
 1. **Start the Game**: The game begins with preloaded Pokémon. The enemy's Pokémon will be randomly selected.
