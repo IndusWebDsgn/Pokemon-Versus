@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Versus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        html,body {
+        margin:0;
+    padding: 0; overflow: hidden;
+    height:100%;}
+        body {
+            font-family: 'Press Start 2P',cursive;
+            color:#fff;
+            background:url('https://pokemonrevolution.net/forum/uploads/monthly_2021_03/DVMT-6OXcAE2rZY.jpg.afab972f972bd7fbd4253bc7aa1cf27f.jpg')no-repeat center center fixed; 
+            text-align:center; 
+            background-size:cover; 
+            transform:scale(1.1);transform-origin:top left;
+        }
+
+        #game-container {display:none;}
+        #preload {margin-top:20%;font-size:1.5rem;}
+        #title {font-size:2rem;margin-top:20px;color:#FFCB05;text-shadow:2px 2px 5px #2A75BB;}
+
+        #flash-text {
+            font-size: 2rem;
+            color: #FFCB05;
+            text-shadow: 2px 2px 5px #2A75BB;
+            display: none;
+            margin-top: 20px;
+        }
+        .flash {
+            animation: flashText 0.5s step-start infinite;
+        }
+
+        @keyframes flashText {
+            50% { opacity: 0; }
+        }
+
+        
+        #round-info {
+            font-size: 1.2rem;
+            margin: 20px;
+            color:#FFCB05;
+        }
+
+        #battle-section {display:flex;align-items:center;justify-content:space-around;margin:20px;}
+
+        #enemy-section, #player-section {
+    width:40%; display:flex;align-items:center;flex-direction:column;}
+        
+        #enemy-img, #player-img {
+        width:150px;height:150px;border:5px solid #FFCB05; background-color: #2A75BB; object-fit: cover;
+        }
+
+        .health-bar {
+        background-color:red;
+        height:20px; margin-top:10px; 
+        width:70%; border:2px solid #fff;position:relative;}
+        
+        .health-fill {
+            background-color:green;
+            height:100%;width:100%;
+        }
+        #player-choices img {
+        height:100px;width:100px;border:3px solid #2A75BB;margin:5px;transition:transform .2s ease; cursor:pointer;}
+        #player-choices img:hover {
+            transform:scale(1.1); border-color:#FFCB05;
+        }
+
+        #battle-area {display:none;}
+
+        #battle-log {
+        background:rgba(0,0,0,.6);margin-top:20px;padding:10px;
+        height:100px;border:2px solid #fff;
+        color:#fff;
+        overflow-y:auto;}
+
+        #player-abilities button {
+        font-family: 'Press Start 2P', cursive;
+        margin:5px;padding:10px;background-color:#FFCB05;
+        border:2px solid #2A75BB;color:#2A75BB; cursor:pointer;
+        transition: background-color .2s;}
+
+        #player-abilities button:hover {
+        background-color:#2A75BB;color:#FFCB05;}
+    </style>
+</head>
+<body>
+<div id="preload">Loading Pokémon...</div>
+
+<div id="game-container">
+<h1 id="title">Pokémon Versus</h1>
+    <div id="round-info">Round 1</div>
+    <div id="flash-text"></div> <!-- Flash Text Container -->
+    <div id="battle-section">
+        <div id="enemy-section">
+            <h2>Enemy Pokémon</h2>
+            <img id="enemy-img" src="" alt="Enemy Pokémon">
+            <div id="enemy-name"></div>
+            <div class="health-bar">
+                <div id="enemy-health-fill" class="health-fill"></div>
+            </div>
+        </div>
+        <div id="player-section">
+            <h2>Your Pokémon</h2>
+            <img id="player-img" src="" alt="Your Pokémon">
+            <div id="player-name"></div>
+            <div class="health-bar">
+                <div id="player-health-fill" class="health-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="player-choices"></div>
+    <div id="battle-area">
+        <h3>Choose an Ability:</h3>
+        <div id="player-abilities"></div>
+    </div>
+
+    <div id="battle-log"></div>
+</div>
+<script src="game.js"></script>
+
+</body>
+</html>
